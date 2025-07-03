@@ -3,12 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 
 type IOutlineProps = {
-  params: Promise<{ locale: string }>;
+  params: { locale: string };
   searchParams?: { prompt?: string };
 };
 
 export async function generateMetadata(props: IOutlineProps) {
-  const { locale } = await props.params;
+  const { locale } = props.params;
   const t = await getTranslations({
     locale,
     namespace: 'Outline',
@@ -21,7 +21,7 @@ export async function generateMetadata(props: IOutlineProps) {
 }
 
 export default async function OutlinePage(props: IOutlineProps) {
-  const { locale } = await props.params;
+  const { locale } = props.params;
   setRequestLocale(locale);
   const t = await getTranslations({
     locale,
