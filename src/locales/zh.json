@@ -1,0 +1,34 @@
+{
+  "Index": {
+    "meta_title": "Deck Create: AI-Generated Slide Decks",
+    "meta_description": "A simple slide deck generator.",
+    "create_button": "Create Slides!",
+    "placeholder": "Describe your slide deck here."
+  },
+  "SignIn": {
+    "meta_title": "Sign in",
+    "meta_description": "Seamlessly sign in to your account with our user-friendly login process."
+  },
+  "SignUp": {
+    "meta_title": "Sign up",
+    "meta_description": "Effortlessly create an account through our intuitive sign-up process."
+  },
+  "Dashboard": {
+    "meta_title": "Dashboard",
+    "dashboard_title": "User Dashboard",
+    "profile": "Profile",
+    "profile_desc": "Manage your profile and account settings.",
+    "decks": "Decks",
+    "decks_desc": "View and manage your decks.",
+    "settings": "Settings",
+    "settings_desc": "Application preferences and settings."
+  },
+  "UserProfile": {
+    "meta_title": "User Profile"
+  },
+  "DashboardLayout": {
+    "dashboard_link": "Dashboard",
+    "user_profile_link": "Manage your account",
+    "sign_out": "Sign out"
+  }
+}
