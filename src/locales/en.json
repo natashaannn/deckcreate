@@ -37,5 +37,19 @@
     "sign_in": "Sign In",
     "sign_out": "Sign Out",
     "create_account": "Create Account"
+  },
+  "Outline": {
+    "meta_title": "Preview Slide Deck Outline",
+    "meta_description": "Preview and edit your generated slide deck outline.",
+    "preview_title": "Preview Your Slide Deck Outline",
+    "edit_outline": "Edit Outline",
+    "outline_placeholder": "Your outline will appear here...",
+    "accept_outline": "Accept & Continue",
+    "back": "Back",
+    "slide_intro": "Introduction",
+    "slide_point1": "Key Point 1",
+    "slide_point2": "Key Point 2",
+    "slide_conclusion": "Conclusion",
+    "outline_preview": "Outline Preview"
   }
 }

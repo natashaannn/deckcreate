@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
+import Link from 'next/link';
 
 type IIndexProps = {
   params: Promise<{ locale: string }>;
@@ -37,7 +38,11 @@ export default async function Index(props: IIndexProps) {
         placeholder={t('placeholder')} 
         className="min-h-[200px] text-base"
         />
-        <Button>{t('create_button')}</Button>
+        <Button asChild>
+          <Link href="/outline">
+            {t('create_button')}
+          </Link>
+        </Button>
       </div>
     </>
   );
