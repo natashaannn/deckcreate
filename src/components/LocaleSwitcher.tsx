@@ -1,33 +1,52 @@
 'use client';
 
-import type { ChangeEventHandler } from 'react';
+import * as React from 'react';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
 import { usePathname } from '@/libs/I18nNavigation';
 import { routing } from '@/libs/I18nRouting';
+import { Button } from "@/components/ui/button";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
+import { ChevronDown, Globe } from "lucide-react";
+
+const localeLabels: Record<string, string> = {
+  en: "English",
+  "zh-cn": "中文（中国）",
+};
 
 export const LocaleSwitcher = () => {
   const router = useRouter();
   const pathname = usePathname();
   const locale = useLocale();
 
-  const handleChange: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    router.push(`/${event.target.value}${pathname}`);
-    router.refresh(); // Ensure the page takes the new locale into account related to the issue #395
+  const handleSelect = (newLocale: string) => {
+    if (newLocale !== locale) {
+      router.push(`/${newLocale}${pathname}`);
+      router.refresh();
+    }
   };
 
   return (
-    <select
-      defaultValue={locale}
-      onChange={handleChange}
-      className="border border-gray-300 font-medium focus:outline-hidden focus-visible:ring-3"
-      aria-label="lang-switcher"
-    >
-      {routing.locales.map(elt => (
-        <option key={elt} value={elt}>
-          {elt.toUpperCase()}
-        </option>
-      ))}
-    </select>
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Button variant="ghost" className="flex items-center gap-2 px-2 py-1 text-base font-medium">
+          <Globe className="w-5 h-5" />
+          {localeLabels[locale] || locale.toUpperCase()}
+          <ChevronDown className="w-4 h-4 ml-1" />
+        </Button>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end">
+        {routing.locales.map((elt) => (
+          <DropdownMenuItem
+            key={elt}
+            onClick={() => handleSelect(elt)}
+            className={locale === elt ? "font-semibold bg-muted" : ""}
+            aria-current={locale === elt}
+          >
+            {localeLabels[elt] || elt.toUpperCase()}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
