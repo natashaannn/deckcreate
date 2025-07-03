@@ -1,11 +1,10 @@
 import { NavBar } from '@/components/NavBar';
 import { BaseTemplate } from '@/templates/BaseTemplate';
 
-export default async function Layout(props: {
+export default function Layout(props: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-
   return (
     <>
       <NavBar />

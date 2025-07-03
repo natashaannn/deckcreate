@@ -3,7 +3,7 @@ import { BaseTemplate } from '@/templates/BaseTemplate';
 
 export default function Layout(props: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   return (
     <>

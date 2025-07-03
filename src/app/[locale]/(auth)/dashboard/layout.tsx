@@ -1,6 +1,6 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { BaseTemplate } from '@/templates/BaseTemplate';
+import { setRequestLocale } from 'next-intl/server';
 import { NavBar } from '@/components/NavBar';
+import { BaseTemplate } from '@/templates/BaseTemplate';
 
 export default async function DashboardLayout(props: {
   children: React.ReactNode;
@@ -8,16 +8,11 @@ export default async function DashboardLayout(props: {
 }) {
   const { locale } = await props.params;
   setRequestLocale(locale);
-  const t = await getTranslations({
-    locale,
-    namespace: 'DashboardLayout',
-  });
 
   return (
     <>
-    <NavBar/>
-      <BaseTemplate
-      >
+      <NavBar />
+      <BaseTemplate>
         {props.children}
       </BaseTemplate>
     </>

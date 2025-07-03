@@ -1,17 +1,17 @@
 'use client';
 
-import * as React from 'react';
+import { ChevronDown, Globe } from 'lucide-react';
 import { useLocale } from 'next-intl';
 import { useRouter } from 'next/navigation';
+import * as React from 'react';
+import { Button } from '@/components/ui/button';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 import { usePathname } from '@/libs/I18nNavigation';
 import { routing } from '@/libs/I18nRouting';
-import { Button } from "@/components/ui/button";
-import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@/components/ui/dropdown-menu";
-import { ChevronDown, Globe } from "lucide-react";
 
 const localeLabels: Record<string, string> = {
-  en: "English",
-  "zh-cn": "中文（中国）",
+  'en': 'English',
+  'zh-cn': '中文（中国）',
 };
 
 export const LocaleSwitcher = () => {
@@ -36,11 +36,11 @@ export const LocaleSwitcher = () => {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        {routing.locales.map((elt) => (
+        {routing.locales.map(elt => (
           <DropdownMenuItem
             key={elt}
             onClick={() => handleSelect(elt)}
-            className={locale === elt ? "font-semibold bg-muted" : ""}
+            className={locale === elt ? 'font-semibold bg-muted' : ''}
             aria-current={locale === elt}
           >
             {localeLabels[elt] || elt.toUpperCase()}

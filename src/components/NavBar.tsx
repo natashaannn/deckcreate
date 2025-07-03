@@ -1,16 +1,16 @@
-"use client"
+'use client';
 
-import * as React from "react"
-import Link from "next/link"
-import { SignOutButton, useAuth } from "@clerk/nextjs"
-import { Button } from "./ui/button"
-import { LocaleSwitcher } from "./LocaleSwitcher"
-import { useTranslations, useLocale } from "next-intl"
+import { SignOutButton, useAuth } from '@clerk/nextjs';
+import { useLocale, useTranslations } from 'next-intl';
+import Link from 'next/link';
+import * as React from 'react';
+import { LocaleSwitcher } from './LocaleSwitcher';
+import { Button } from './ui/button';
 
 export function NavBar() {
-  const { isSignedIn } = useAuth()
-  const t = useTranslations("NavBar")
-  const locale = useLocale()
+  const { isSignedIn } = useAuth();
+  const t = useTranslations('NavBar');
+  const locale = useLocale();
 
   return (
     <nav className="flex items-center justify-between py-4 px-6 w-full">
@@ -25,43 +25,45 @@ export function NavBar() {
       {/* Right: Auth Buttons */}
       <div className="flex items-center gap-2">
         <LocaleSwitcher />
-        {isSignedIn ? (
-          <>
-            <Link
-              href={`/${locale}/dashboard`}
-              className="px-4 py-2 rounded bg-black text-white font-medium hover:bg-gray-700 transition"
-            >
-              {t('create_slides')}
-            </Link>
-            <Link
-              href={`/${locale}/dashboard`}
-              className="px-4 py-2 rounded text-black font-medium hover:bg-gray-100 transition"
-            >
-              {t('account')}
-            </Link>
-            <SignOutButton>
-              <Button variant="outline" className="px-4 py-2">
-                {t('sign_out')}
-              </Button>
-            </SignOutButton>
-          </>
-        ) : (
-          <>
-            <Link
-              href={`/${locale}/sign-in`}
-              className="px-4 py-2 rounded bg-black text-white font-medium hover:bg-gray-700 transition"
-            >
-              {t('sign_in')}
-            </Link>
-            <Link
-              href={`/${locale}/create-account`}
-              className="px-4 py-2 rounded border border-black text-black font-medium hover:bg-gray-50 transition"
-            >
-              {t('create_account')}
-            </Link>
-          </>
-        )}
+        {isSignedIn
+          ? (
+              <>
+                <Link
+                  href={`/${locale}/dashboard`}
+                  className="px-4 py-2 rounded bg-black text-white font-medium hover:bg-gray-700 transition"
+                >
+                  {t('create_slides')}
+                </Link>
+                <Link
+                  href={`/${locale}/dashboard`}
+                  className="px-4 py-2 rounded text-black font-medium hover:bg-gray-100 transition"
+                >
+                  {t('account')}
+                </Link>
+                <SignOutButton>
+                  <Button variant="outline" className="px-4 py-2">
+                    {t('sign_out')}
+                  </Button>
+                </SignOutButton>
+              </>
+            )
+          : (
+              <>
+                <Link
+                  href={`/${locale}/sign-in`}
+                  className="px-4 py-2 rounded bg-black text-white font-medium hover:bg-gray-700 transition"
+                >
+                  {t('sign_in')}
+                </Link>
+                <Link
+                  href={`/${locale}/create-account`}
+                  className="px-4 py-2 rounded border border-black text-black font-medium hover:bg-gray-50 transition"
+                >
+                  {t('create_account')}
+                </Link>
+              </>
+            )}
       </div>
     </nav>
-  )
+  );
 }

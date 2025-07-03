@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import Link from "next/link";
+import Link from 'next/link';
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: string }>;
