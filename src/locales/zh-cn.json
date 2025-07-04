@@ -1,0 +1,55 @@
+{
+  "Index": {
+    "meta_title": "Deck Create：AI生成幻灯片",
+    "meta_description": "一个简单的幻灯片生成器。",
+    "create_button": "创建幻灯片！",
+    "placeholder": "在此描述您的幻灯片内容。"
+  },
+  "SignIn": {
+    "meta_title": "登录",
+    "meta_description": "通过我们用户友好的登录流程无缝登录您的账户。"
+  },
+  "SignUp": {
+    "meta_title": "注册",
+    "meta_description": "通过我们直观的注册流程轻松创建账户。"
+  },
+  "Dashboard": {
+    "meta_title": "仪表盘",
+    "dashboard_title": "用户仪表盘",
+    "profile": "个人资料",
+    "profile_desc": "管理您的个人资料和账户设置。",
+    "decks": "幻灯片集",
+    "decks_desc": "查看和管理您的幻灯片集。",
+    "settings": "设置",
+    "settings_desc": "应用偏好和设置。"
+  },
+  "UserProfile": {
+    "meta_title": "用户资料"
+  },
+  "DashboardLayout": {
+    "dashboard_link": "仪表盘",
+    "user_profile_link": "管理您的账户",
+    "sign_out": "退出登录"
+  },
+  "NavBar": {
+    "create_slides": "创建幻灯片",
+    "account": "我的账户",
+    "sign_in": "登录",
+    "sign_out": "退出登录",
+    "create_account": "创建账户"
+  },
+  "Outline": {
+    "meta_title": "预览幻灯片大纲",
+    "meta_description": "预览并编辑您生成的幻灯片大纲。",
+    "preview_title": "预览您的幻灯片大纲",
+    "edit_outline": "编辑大纲",
+    "outline_placeholder": "您的大纲将在此显示……",
+    "accept_outline": "接受并继续",
+    "back": "返回",
+    "slide_intro": "介绍",
+    "slide_point1": "要点一",
+    "slide_point2": "要点二",
+    "slide_conclusion": "结论",
+    "outline_preview": "大纲预览"
+  }
+}
